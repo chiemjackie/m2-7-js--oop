@@ -232,7 +232,24 @@ myCar.drive();
 // 1. Given this class, how would we represent its hunger level?
 // 2. How could we represent varying hunger levels based on activity?
 // 3. How about when it eats?
-class Animal {}
+class Animal {
+  constructor() {
+    this.hunger = 0;
+  }
+  run = (repeat) => {
+    for (let i = 0; i < repeat; i++) {
+      this.hunger += 10;
+    }
+  }
+  eat = () => {
+    this.hunger -= 20
+  }
+}
+
+const milo = new Animal(100)
+milo.run(3);
+milo.eat();
+console.log(milo.hunger); // 10
 ```
 
 ---
@@ -241,7 +258,24 @@ class Animal {}
 // Exercise 2
 // 1. Track happiness, strength and hunger
 // 2. What happens when a "Human" exercises, dances, eats?
-class Human {}
+class Human {
+  constructor () {
+    this.hunger = 0;
+    this.happiness = 100;
+    this.strength = 50;
+  }
+  activity = () => {
+    this.hunger += 1;
+  };
+  eat = () => {
+    this.hunger -= 1;
+  };
+  dance = () => {
+    this.activity();
+    this.happiness += 5;
+    this.junger += 1;
+  }
+}
 ```
 
 ---
